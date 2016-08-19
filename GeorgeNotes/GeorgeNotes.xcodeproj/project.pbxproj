@@ -14,6 +14,9 @@
 		5E09BCBE1D67313300EB526D /* AuthorizationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E09BCBD1D67313300EB526D /* AuthorizationController.swift */; };
 		5E09BCC01D6731C200EB526D /* PersonalPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E09BCBF1D6731C200EB526D /* PersonalPageController.swift */; };
 		5E09BCC21D67332F00EB526D /* NoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E09BCC11D67332F00EB526D /* NoteController.swift */; };
+		5E09BCC41D67349300EB526D /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E09BCC31D67349300EB526D /* Note.swift */; };
+		5E5677281D677AC700B5B69B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5677271D677AC700B5B69B /* User.swift */; };
+		5E56772A1D677CAB00B5B69B /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5677291D677CAB00B5B69B /* Store.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,9 @@
 		5E09BCBD1D67313300EB526D /* AuthorizationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthorizationController.swift; path = Controllers/AuthorizationController.swift; sourceTree = "<group>"; };
 		5E09BCBF1D6731C200EB526D /* PersonalPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonalPageController.swift; path = Controllers/PersonalPageController.swift; sourceTree = "<group>"; };
 		5E09BCC11D67332F00EB526D /* NoteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteController.swift; path = Controllers/NoteController.swift; sourceTree = "<group>"; };
+		5E09BCC31D67349300EB526D /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Note.swift; path = Modal/Note.swift; sourceTree = "<group>"; };
+		5E5677271D677AC700B5B69B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Modal/User.swift; sourceTree = "<group>"; };
+		5E5677291D677CAB00B5B69B /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Store.swift; path = Modal/Store.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +99,7 @@
 		5E09BC8B1D672D7700EB526D /* GeorgeNotes */ = {
 			isa = PBXGroup;
 			children = (
+				5E09BCC51D67349D00EB526D /* Modal */,
 				5E09BCBC1D67306400EB526D /* Controllers */,
 				5E09BC8C1D672D7700EB526D /* AppDelegate.swift */,
 				5E09BC901D672D7700EB526D /* Main.storyboard */,
@@ -111,6 +118,16 @@
 				5E09BCC11D67332F00EB526D /* NoteController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		5E09BCC51D67349D00EB526D /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				5E5677291D677CAB00B5B69B /* Store.swift */,
+				5E09BCC31D67349300EB526D /* Note.swift */,
+				5E5677271D677AC700B5B69B /* User.swift */,
+			);
+			name = Modal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,8 +263,11 @@
 				5E09BCC01D6731C200EB526D /* PersonalPageController.swift in Sources */,
 				5E09BCBE1D67313300EB526D /* AuthorizationController.swift in Sources */,
 				5E09BCBB1D67304500EB526D /* RegistrationController.swift in Sources */,
+				5E56772A1D677CAB00B5B69B /* Store.swift in Sources */,
 				5E09BC8D1D672D7700EB526D /* AppDelegate.swift in Sources */,
 				5E09BCC21D67332F00EB526D /* NoteController.swift in Sources */,
+				5E09BCC41D67349300EB526D /* Note.swift in Sources */,
+				5E5677281D677AC700B5B69B /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +488,7 @@
 				5E09BCB31D672D7700EB526D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5E09BCB41D672D7700EB526D /* Build configuration list for PBXNativeTarget "GeorgeNotesTests" */ = {
 			isa = XCConfigurationList;
@@ -476,6 +497,7 @@
 				5E09BCB61D672D7700EB526D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5E09BCB71D672D7700EB526D /* Build configuration list for PBXNativeTarget "GeorgeNotesUITests" */ = {
 			isa = XCConfigurationList;
@@ -484,6 +506,7 @@
 				5E09BCB91D672D7700EB526D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
