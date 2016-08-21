@@ -66,3 +66,28 @@ extension Store
         return nil
     }
 }
+
+//MARK:- Проверка данных
+extension Store
+{
+    func checkData(login: String, _ password: String, _ surname: String, _ name: String) -> Bool
+    {
+        if login == "" || password == ""
+        {return false}
+        return true
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
