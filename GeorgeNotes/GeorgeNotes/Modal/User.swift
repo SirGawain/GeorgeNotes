@@ -23,20 +23,22 @@ class User
         self.password = password
         self.Notes = [Note]()
         
-        if surname != nil
-            {self.surname = surname!}
-        else
+        if surname == nil || surname == ""
             {self.surname = "No surname"}
-        
-        if name != nil
-            {self.name = name!}
         else
+            {self.surname = surname!}
+        
+        if name == nil || name == ""
             {self.name = "No name"}
+        else
+            {self.name = name!}
         
         if image != nil
             {self.image = image!}
         else
             {self.image = UIImage(named: "NoUserImage")!}
+        
+        addNote("Первая заметка!", "Самое лучшее приложение", UIImage(named: "firstNote"))
     }
 }
 

@@ -51,7 +51,7 @@
                     <connections>
                         <outlet property="loginField" destination="m5Y-1e-Ea4" id="tcZ-RG-RFP"/>
                         <outlet property="passwordField" destination="mK9-u8-g1c" id="swk-P4-sp6"/>
-                        <segue destination="wyA-71-zAJ" kind="show" identifier="GoToPersonalPage" id="8Lt-m6-dNm"/>
+                        <segue destination="wyA-71-zAJ" kind="push" identifier="GoToPersonalPage" id="8Lt-m6-dNm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Clu-rI-es3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -139,7 +139,7 @@
         <!--Personal Page Controller-->
         <scene sceneID="eKy-Do-uGB">
             <objects>
-                <viewController id="wyA-71-zAJ" customClass="PersonalPageController" customModule="GeorgeNotes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="wyA-71-zAJ" customClass="PersonalPageController" customModule="GeorgeNotes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UfD-yj-cxp"/>
                         <viewControllerLayoutGuide type="bottom" id="TGs-4A-sBx"/>
@@ -167,13 +167,56 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <items>
                                     <navigationItem title="Профиль" id="zPH-fu-jON">
-                                        <barButtonItem key="leftBarButtonItem" title="Выход" id="F0u-05-zwt"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Выход" id="F0u-05-zwt">
+                                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S2D-6t-HaC">
+                                <rect key="frame" x="0.0" y="235" width="320" height="333"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellNote" rowHeight="80" id="QtO-e7-nmG" customClass="NoteTableCell" customModule="GeorgeNotes" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QtO-e7-nmG" id="9oW-EC-FlR">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UhN-Xb-Xrj">
+                                                    <rect key="frame" x="8" y="8" width="63" height="63"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBV-94-F6I">
+                                                    <rect key="frame" x="79" y="29" width="233" height="42"/>
+                                                    <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="32"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageNote" destination="UhN-Xb-Xrj" id="B1u-6s-Ey9"/>
+                                            <outlet property="labelNote" destination="UBV-94-F6I" id="kEk-jM-XrX"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="wyA-71-zAJ" id="zU5-JM-y59"/>
+                                    <outlet property="delegate" destination="wyA-71-zAJ" id="jUL-oQ-kgx"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Заметки:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6B-oU-5Tw">
+                                <rect key="frame" x="108" y="201" width="105" height="44"/>
+                                <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="35"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="1A8-6B-Qrl"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="BarName" destination="zPH-fu-jON" id="Sm2-di-pBN"/>

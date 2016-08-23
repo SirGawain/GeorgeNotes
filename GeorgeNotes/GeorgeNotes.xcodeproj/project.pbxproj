@@ -15,6 +15,7 @@
 		5E09BCC01D6731C200EB526D /* PersonalPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E09BCBF1D6731C200EB526D /* PersonalPageController.swift */; };
 		5E09BCC21D67332F00EB526D /* NoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E09BCC11D67332F00EB526D /* NoteController.swift */; };
 		5E09BCC41D67349300EB526D /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E09BCC31D67349300EB526D /* Note.swift */; };
+		5E2C93B01D6CCA200022C91F /* NoteTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2C93AF1D6CCA200022C91F /* NoteTableCell.swift */; };
 		5E5677281D677AC700B5B69B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5677271D677AC700B5B69B /* User.swift */; };
 		5E56772A1D677CAB00B5B69B /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5677291D677CAB00B5B69B /* Store.swift */; };
 		5EABDC901D699FE10043B734 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EABDC8F1D699FE10043B734 /* Main.swift */; };
@@ -50,6 +51,7 @@
 		5E09BCBF1D6731C200EB526D /* PersonalPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonalPageController.swift; path = Controllers/PersonalPageController.swift; sourceTree = "<group>"; };
 		5E09BCC11D67332F00EB526D /* NoteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteController.swift; path = Controllers/NoteController.swift; sourceTree = "<group>"; };
 		5E09BCC31D67349300EB526D /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Note.swift; path = Modal/Note.swift; sourceTree = "<group>"; };
+		5E2C93AF1D6CCA200022C91F /* NoteTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteTableCell.swift; path = Controllers/NoteTableCell.swift; sourceTree = "<group>"; };
 		5E5677271D677AC700B5B69B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Modal/User.swift; sourceTree = "<group>"; };
 		5E5677291D677CAB00B5B69B /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Store.swift; path = Modal/Store.swift; sourceTree = "<group>"; };
 		5EABDC8F1D699FE10043B734 /* Main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Main.swift; path = GeorgeNotes/Main.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				5E09BCBA1D67304500EB526D /* RegistrationController.swift */,
 				5E09BCBF1D6731C200EB526D /* PersonalPageController.swift */,
 				5E09BCC11D67332F00EB526D /* NoteController.swift */,
+				5E2C93AF1D6CCA200022C91F /* NoteTableCell.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				5E09BCBB1D67304500EB526D /* RegistrationController.swift in Sources */,
 				5E56772A1D677CAB00B5B69B /* Store.swift in Sources */,
 				5E09BC8D1D672D7700EB526D /* AppDelegate.swift in Sources */,
+				5E2C93B01D6CCA200022C91F /* NoteTableCell.swift in Sources */,
 				5E09BCC21D67332F00EB526D /* NoteController.swift in Sources */,
 				5E09BCC41D67349300EB526D /* Note.swift in Sources */,
 				5E5677281D677AC700B5B69B /* User.swift in Sources */,

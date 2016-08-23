@@ -10,7 +10,7 @@ import UIKit
 
 class Store
 {
-    private var Users: [User]
+    var Users: [User]
     
     init()
     {
@@ -53,13 +53,13 @@ extension Store
         return false
     }
     
-    func findUser(login: String, _ password: String) -> User?
+    func findUser(login: String, _ password: String) -> Int?
     {
         for i in 0 ..< Users.count
         {
             if Users[i].login == login && Users[i].password == password
             {
-                return Users[i]
+                return i
             }
         }
         

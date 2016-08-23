@@ -14,7 +14,7 @@ class AuthorizationController: UIViewController
     @IBOutlet weak var loginField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
-    var tempUser: User? = User("","","","",nil)
+    var indexUser: Int? = nil
     
     override func viewDidLoad()
     {
@@ -26,9 +26,9 @@ class AuthorizationController: UIViewController
     {
         let login = loginField.text!
         let password = passwordField.text!
-        tempUser = store.findUser(login,password)
+        indexUser = store.findUser(login,password)
         
-        if tempUser != nil
+        if indexUser != nil
         {
             performSegueWithIdentifier("GoToPersonalPage", sender: nil)
         }
@@ -63,7 +63,7 @@ extension AuthorizationController
         if segue.identifier == "GoToPersonalPage"
         {
             let destination = segue.destinationViewController as! PersonalPageController
-            destination.tempUser = tempUser!
+            destination.indexUser = self.indexUser!
         }
     }
 }
