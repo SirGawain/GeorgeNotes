@@ -34,7 +34,7 @@ class NoteController: UIViewController,  UIImagePickerControllerDelegate, UINavi
         imageNote.layer.borderColor = UIColor.lightGrayColor().CGColor
         imageNote.layer.cornerRadius = 6
         
-        if indexUser == -1
+        if indexNote == -1
         {
             titleField.text = ""
             textView.text = ""
@@ -53,6 +53,38 @@ class NoteController: UIViewController,  UIImagePickerControllerDelegate, UINavi
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .PhotoLibrary
         presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
+    @IBAction func SaveNote(sender: AnyObject)
+    {
+        let title = titleField.text!
+        let text = textView.text!
+        let image = imageNote.image!
+        
+        if checkTitle(title) == true
+        {
+            if indexNote == -1
+            {
+                store.Users[indexUser].addNote(title, text, image)
+            }
+            else
+            {
+                store.Users[indexUser].Notes[indexNote].title = title
+                store.Users[indexUser].Notes[indexNote].text = text
+                store.Users[indexUser].Notes[indexNote].image = image
+            }
+            performSegueWithIdentifier("SaveNote", sender: sender)
+            MessageBox("Поздравляем!", "Заметка успешно сохранена.")
+        }
+        else
+        {
+            MessageBox("Внимание!", "Неверное название. Заметка не сохранена.")
+        }
+    }
+    
+    @IBAction func Exit(sender: AnyObject)
+    {
+        performSegueWithIdentifier("SaveNote", sender: sender)
     }
 }
 
@@ -150,7 +182,46 @@ extension NoteController
     }
 }
 
+//MARK:- Segue
+extension NoteController
+{
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        let destin = segue.destinationViewController as! PersonalPageController
+        destin.indexUser = self.indexUser
+    }
+}
 
+//MARK:- Check title
+extension NoteController
+{
+    func checkTitle (str: String) -> Bool
+    {
+        if str.hasPrefix(" ")
+        {
+            return false
+        }
+        
+        if str.characters.count <= 2
+        {
+            return false
+        }
+        
+        return true
+    }
+}
 
-
-
+//MARK:- Сообщение об ошибке
+extension NoteController
+{
+    func MessageBox(title: String, _ message: String)
+    {
+        let messangeBox1 = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        let okAction = UIAlertAction(title: "ОК", style: .Default)
+        {
+            (action) in
+        }
+        messangeBox1.addAction(okAction)
+        presentViewController(messangeBox1, animated: true, completion: nil)
+    }
+}

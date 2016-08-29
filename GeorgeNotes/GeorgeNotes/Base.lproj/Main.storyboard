@@ -256,9 +256,15 @@
                                     <navigationItem title="Заметка:" id="lQM-SC-JpC">
                                         <barButtonItem key="leftBarButtonItem" title="Профиль" id="Rg6-Un-pIn">
                                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="Exit:" destination="IjR-N5-cSw" id="f0T-3L-R1o"/>
+                                            </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Сохранить" id="D5S-vp-aOh">
                                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="SaveNote:" destination="IjR-N5-cSw" id="rK2-bx-wg0"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -329,6 +335,7 @@
                         <outlet property="scrollView" destination="N0B-nW-VhG" id="6fd-Xm-4qe"/>
                         <outlet property="textView" destination="tnm-48-zZ5" id="KUv-rE-9af"/>
                         <outlet property="titleField" destination="h9K-N4-S0B" id="KQ1-iI-mzK"/>
+                        <segue destination="wyA-71-zAJ" kind="show" identifier="SaveNote" id="0qD-kN-fFh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kWe-rc-tSW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -380,6 +387,7 @@
         <image name="NoUserImage" width="626" height="626"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="0qD-kN-fFh"/>
         <segue reference="0UB-Lx-eWH"/>
     </inferredMetricsTieBreakers>
 </document>

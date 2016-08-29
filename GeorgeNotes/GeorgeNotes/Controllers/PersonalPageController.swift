@@ -100,7 +100,7 @@ extension PersonalPageController
         if segue.identifier == "CreateNote"
         {
             destin.indexNote = -1
-            destin.indexUser = -1
+            destin.indexUser = self.indexUser
         }
     }
 }
