@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JGD-Hh-bki">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="IjR-N5-cSw">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Authorization Controller-->
@@ -240,9 +241,87 @@
                     <view key="view" contentMode="scaleToFill" id="Mab-6Y-Iq5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UGe-lX-Xwz">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Заметка:" id="lQM-SC-JpC">
+                                        <barButtonItem key="leftBarButtonItem" title="Профиль" id="Rg6-Un-pIn">
+                                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Сохранить" id="D5S-vp-aOh">
+                                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N0B-nW-VhG">
+                                <rect key="frame" x="0.0" y="72" width="320" height="496"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h9K-N4-S0B">
+                                        <rect key="frame" x="8" y="8" width="304" height="30"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tnm-48-zZ5">
+                                        <rect key="frame" x="8" y="46" width="304" height="329"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NoNoteImage" translatesAutoresizingMaskIntoConstraints="NO" id="NUc-Rl-ZH7">
+                                        <rect key="frame" x="97" y="383" width="127" height="87"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="87" id="W0x-AX-AJD"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAT-qw-yb4">
+                                        <rect key="frame" x="198" y="378" width="26" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="+">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addImage:" destination="IjR-N5-cSw" eventType="touchUpInside" id="xiH-ie-Y40"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="NUc-Rl-ZH7" firstAttribute="leading" secondItem="N0B-nW-VhG" secondAttribute="leading" constant="97" id="2wI-ht-iDt"/>
+                                    <constraint firstAttribute="bottom" secondItem="h9K-N4-S0B" secondAttribute="bottom" constant="458" id="H6s-C6-DAI"/>
+                                    <constraint firstItem="h9K-N4-S0B" firstAttribute="trailing" secondItem="tnm-48-zZ5" secondAttribute="trailing" id="HPs-Xf-miS"/>
+                                    <constraint firstItem="h9K-N4-S0B" firstAttribute="top" secondItem="N0B-nW-VhG" secondAttribute="topMargin" id="Nwd-gm-MH1"/>
+                                    <constraint firstItem="NUc-Rl-ZH7" firstAttribute="top" secondItem="tnm-48-zZ5" secondAttribute="bottom" constant="8" symbolic="YES" id="OVd-4b-zw2"/>
+                                    <constraint firstItem="tnm-48-zZ5" firstAttribute="top" secondItem="h9K-N4-S0B" secondAttribute="bottom" constant="8" symbolic="YES" id="Srw-XT-VPA"/>
+                                    <constraint firstItem="h9K-N4-S0B" firstAttribute="leading" secondItem="tnm-48-zZ5" secondAttribute="leading" id="Zzc-yK-qxC"/>
+                                    <constraint firstItem="h9K-N4-S0B" firstAttribute="leading" secondItem="N0B-nW-VhG" secondAttribute="leadingMargin" id="arI-yl-Mni"/>
+                                    <constraint firstItem="NUc-Rl-ZH7" firstAttribute="centerX" secondItem="N0B-nW-VhG" secondAttribute="centerX" id="cof-Mw-yAZ"/>
+                                    <constraint firstItem="h9K-N4-S0B" firstAttribute="trailing" secondItem="N0B-nW-VhG" secondAttribute="trailingMargin" id="laS-Jx-rh3"/>
+                                    <constraint firstItem="h9K-N4-S0B" firstAttribute="centerX" secondItem="NUc-Rl-ZH7" secondAttribute="centerX" id="sgy-3v-0HZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="NUc-Rl-ZH7" secondAttribute="bottom" constant="26" id="xpW-hZ-piY"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="N0B-nW-VhG" firstAttribute="leading" secondItem="Mab-6Y-Iq5" secondAttribute="leading" id="2rq-ua-vkN"/>
+                            <constraint firstItem="N0B-nW-VhG" firstAttribute="top" secondItem="UGe-lX-Xwz" secondAttribute="bottom" id="4C4-VT-QFz"/>
+                            <constraint firstAttribute="trailing" secondItem="N0B-nW-VhG" secondAttribute="trailing" id="LXA-D9-qfs"/>
+                            <constraint firstItem="N0B-nW-VhG" firstAttribute="top" secondItem="Mab-6Y-Iq5" secondAttribute="top" constant="72" id="N01-Lx-edD"/>
+                            <constraint firstItem="N0B-nW-VhG" firstAttribute="leading" secondItem="UGe-lX-Xwz" secondAttribute="leading" id="Nlt-fJ-UgI"/>
+                            <constraint firstItem="N0B-nW-VhG" firstAttribute="bottom" secondItem="KFa-Bb-12h" secondAttribute="top" id="PwN-oW-f9f"/>
+                            <constraint firstItem="N0B-nW-VhG" firstAttribute="trailing" secondItem="UGe-lX-Xwz" secondAttribute="trailing" id="wxs-fq-yt9"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="imageNote" destination="NUc-Rl-ZH7" id="IIq-mb-wOF"/>
+                        <outlet property="scrollView" destination="N0B-nW-VhG" id="6fd-Xm-4qe"/>
+                        <outlet property="textView" destination="tnm-48-zZ5" id="KUv-rE-9af"/>
+                        <outlet property="titleField" destination="h9K-N4-S0B" id="KQ1-iI-mzK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kWe-rc-tSW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -289,6 +368,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="NoNoteImage" width="275" height="275"/>
         <image name="NoUserImage" width="626" height="626"/>
     </resources>
 </document>
