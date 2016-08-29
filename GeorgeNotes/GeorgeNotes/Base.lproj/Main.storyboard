@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="IjR-N5-cSw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JGD-Hh-bki">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -171,6 +171,12 @@
                                         <barButtonItem key="leftBarButtonItem" title="Выход" id="F0u-05-zwt">
                                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="mTh-9c-pHI">
+                                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="createNote:" destination="wyA-71-zAJ" id="t3W-5M-pEY"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -224,6 +230,8 @@
                         <outlet property="imageUser" destination="4D6-OJ-0vM" id="zlg-5z-die"/>
                         <outlet property="nameLabel" destination="Mgd-Af-SOa" id="Vk2-3D-u3a"/>
                         <outlet property="surnameLabel" destination="fol-ti-yIU" id="jzI-Ax-XLn"/>
+                        <segue destination="IjR-N5-cSw" kind="show" identifier="ShowNote" id="o3U-H6-4nt"/>
+                        <segue destination="IjR-N5-cSw" kind="show" identifier="CreateNote" id="0UB-Lx-eWH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vvf-kZ-6zT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -371,4 +379,7 @@
         <image name="NoNoteImage" width="275" height="275"/>
         <image name="NoUserImage" width="626" height="626"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="0UB-Lx-eWH"/>
+    </inferredMetricsTieBreakers>
 </document>

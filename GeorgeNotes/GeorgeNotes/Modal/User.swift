@@ -38,7 +38,9 @@ class User
         else
             {self.image = UIImage(named: "NoUserImage")!}
         
-        addNote("Первая заметка!", "Самое лучшее приложение", UIImage(named: "firstNote"))
+        let text = "Здравствуйте! Это ваша первая заметка в приложении Notes. Отредактируйте или удалите её. Спасибо, что используете программное обеспечение компании George."
+        
+        addNote("Первая заметка!", text, UIImage(named: "firstNote"))
     }
 }
 

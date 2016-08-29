@@ -18,6 +18,9 @@ class NoteController: UIViewController,  UIImagePickerControllerDelegate, UINavi
     var flag: Bool = false
     let imagePicker = UIImagePickerController()
     
+    var indexUser: Int = -1
+    var indexNote: Int = -1
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -30,6 +33,18 @@ class NoteController: UIViewController,  UIImagePickerControllerDelegate, UINavi
         imageNote.layer.borderWidth = 1
         imageNote.layer.borderColor = UIColor.lightGrayColor().CGColor
         imageNote.layer.cornerRadius = 6
+        
+        if indexUser == -1
+        {
+            titleField.text = ""
+            textView.text = ""
+        }
+        else
+        {
+            titleField.text = store.Users[indexUser].Notes[indexNote].title
+            textView.text = store.Users[indexUser].Notes[indexNote].text
+            imageNote.image = store.Users[indexUser].Notes[indexNote].image
+        }
     }
     
     @IBAction func addImage(sender: AnyObject)

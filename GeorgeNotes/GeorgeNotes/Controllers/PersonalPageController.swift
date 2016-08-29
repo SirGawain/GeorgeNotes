@@ -16,6 +16,7 @@ class PersonalPageController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var BarName: UINavigationItem!
     
     var indexUser: Int = -1
+    var indexNote: Int = -1
     
     override func viewDidLoad()
     {
@@ -27,6 +28,12 @@ class PersonalPageController: UIViewController, UITableViewDataSource, UITableVi
         imageUser.clipsToBounds = true
         BarName.title = store.Users[indexUser].login
     }
+    
+    @IBAction func createNote(sender: AnyObject)
+    {
+        performSegueWithIdentifier("CreateNote", sender: sender)
+    }
+    
 }
 
 //MARK:- Настройка таблицы
@@ -54,6 +61,13 @@ extension PersonalPageController
 //MARK:- Взаимодействие с таблицей
 extension PersonalPageController
 {
+    //Нажатие
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        indexNote = indexPath.row
+        performSegueWithIdentifier("ShowNote", sender: nil)
+    }
+    
     //Свайп
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]?
     {
@@ -68,3 +82,36 @@ extension PersonalPageController
         return [deleteAction]
     }
 }
+
+
+//MARK:- Переходы
+extension PersonalPageController
+{
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        let destin = segue.destinationViewController as! NoteController
+        
+        if segue.identifier == "ShowNote"
+        {
+            destin.indexNote = self.indexNote
+            destin.indexUser = self.indexUser
+        }
+        
+        if segue.identifier == "CreateNote"
+        {
+            destin.indexNote = -1
+            destin.indexUser = -1
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
